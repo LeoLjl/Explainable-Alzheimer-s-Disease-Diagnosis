@@ -261,17 +261,15 @@ def main_worker():
                             hippo_mask = hippo_mask.cuda(non_blocking=True)
                             cls_token = cls_token.cuda(non_blocking=True)
 
-                            # import pdb; pdb.set_trace()
-                            # mask, cls = model(image)
                             mask, cls, attention_map_result = model(image)
                             # cls, attention_map = cls
 
                             mask[mask > 0.5] = 1
                             mask[mask < 0.5] = 0
-                            # import pdb;pdb.set_trace()
+                            
                             dice.append(meandice(mask, hippo_mask).cpu().detach().numpy())
                             _, cls_result = torch.max(cls.data, 1)
-                            # import pdb;pdb.set_trace()
+                            
                             cls_corr += (cls_result == cls_token).sum().item()
                             cls_num += 1
                             logging.info('{} real_time acc : {:.3f}%, average_dice:{:.5f}, this subject is:{}'
@@ -299,11 +297,11 @@ def main_worker():
                     print('------------------------------test end------------------------------')
         if args.local_rank == 0:
             f1 = f1_score(y_true, y_predict)
-            # roc = roc_curve(y_true, y_predict)
+            
             auc = roc_auc_score(y_true, y_predict)
             recall = recall_score(y_true, y_predict)
             precision = precision_score(y_true, y_predict)
-            # import pdb; pdb.set_trace()
+        
             training_info.append(
                 [epoch, cls_corr / cls_num * 100, f1, auc, recall, precision, np.mean(train_dice)])
 
@@ -317,7 +315,7 @@ def main_worker():
             logging.info('Estimated remaining training time: {:.2f} hours!'.format(remaining_time_hour))
 
     if args.local_rank == 0:
-        # writer.close()
+        
         final_name = os.path.join(checkpoint_dir, 'model_epoch_last.pth')
         torch.save({
             'epoch': args.end_epoch,
