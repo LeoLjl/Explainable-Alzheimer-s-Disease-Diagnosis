@@ -1,4 +1,6 @@
 # An Explainable Multi-task Transformer Network for Accurate Alzheimer's Disease Diagnosis
+This repo contains the code to our paper: An Explainable Multi-task Transformer Network for Accurate Alzheimer's Disease Diagnosis.
+
 ## Requirements
 - python 3.7
 - pytorch 1.6.0
