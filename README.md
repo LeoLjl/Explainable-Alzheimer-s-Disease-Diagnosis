@@ -14,8 +14,10 @@ The roc curve of our model are shown as follow:
 <div align="center">
   <img width="50%" alt="DEEPTAAD illustration" src="fig/rooc.png">
 </div>
+
+
 ## Data Acquisition
-- Dataset can be download from baidunetdisk(https://pan.baidu.com/s/1LGHuMxAAltROo4dxf39JCg?pwd=1234)
+- The processed ADNI-1 dataset can be download from baidunetdisk(https://pan.baidu.com/s/1LGHuMxAAltROo4dxf39JCg?pwd=1234)
 
 ## Requirements
 - python 3.7
