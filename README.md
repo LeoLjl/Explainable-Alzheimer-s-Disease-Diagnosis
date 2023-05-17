@@ -3,7 +3,7 @@
 
 ## Flowchart of our DeepTAAD
 <div align="center">
-  <img width="100%" alt="DEEPTAAD illustration" src="fig/model_overiew.png">
+  <img width="100%" alt="DEEPTAAD illustration" src="fig/model.png">
 </div>
 
 ## Data Acquisition
