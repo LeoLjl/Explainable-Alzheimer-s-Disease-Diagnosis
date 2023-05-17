@@ -1,5 +1,12 @@
-# An Explainable Multi-task Transformer Network for Accurate Alzheimer's Disease Diagnosis
-This repo contains the code to our paper: An Explainable Multi-task Transformer Network for Accurate Alzheimer's Disease Diagnosis.
+# An Explainable Lesion-guided Multi-task Learning For Alzheimer;s Disease Diagnosis
+
+
+## Flowchart of our DeepTAAD
+
+
+## Data Acquisition
+- Dataset can be download from baidunetdisk(https://pan.baidu.com/s/1LGHuMxAAltROo4dxf39JCg?pwd=1234)
+
 
 ## Requirements
 - python 3.7
@@ -9,19 +16,17 @@ This repo contains the code to our paper: An Explainable Multi-task Transformer 
 - nibabel
 - setproctitle
 - medcam
-
-## Data Acquisition
-- Dataset can be download from baidunetdisk, link will be posted soon
+- medpy
 
 ## Training
-Run the training script on ADNI dataset. Distributed training is available for training the proposed TransAD, where --nproc_per_node decides the numer of gpus and --master_port implys the port number.
-The cam_train.py file is used to generate the cam result during training
-
-`python3 -m torch.distributed.launch --nproc_per_node=1 --master_port 20003 cam_train.py`
+Run the training script on ADNI dataset. Distributed training is available for training the proposed DeepTAAD, where --nproc_per_node decides the numer of gpus and --master_port implys the port number.
+you can use the following command to train the model with task assistance loss
+`CUDA_VISIBLE_DEVICES=1 python3 -m torch.distributed.launch --nproc_per_node=1 --master_port 20003 cam_train.py`
+you can use the following command to train the model with task assistance loss and auxliary loss weight method to balance the scale of tasks
+`CUDA_VISIBLE_DEVICES=1 python3 -m torch.distributed.launch --nproc_per_node=1 --master_port 20003 uncertainty_loss_train.py`
 
 ## Testing 
-If you want to test the model which has been trained on the ADNI dataset, change Line62 in `test_ADNI.py` and run the script as follows.
-
-`python3 test_ADNI.py`
+If  you want to test the model which has been trained on the ADNI dataset, run the testing script as following.
+`python test_ADNI.py`
 
 
