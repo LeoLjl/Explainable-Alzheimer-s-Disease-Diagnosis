@@ -8,11 +8,11 @@
 
 ## Classification result of our method
 <div align="center">
-  <img width="100%" alt="DEEPTAAD illustration" src="fig/result_table.png">
+  <img width="80%" alt="DEEPTAAD illustration" src="fig/result_table.png">
 </div>
 The roc curve of our model are shown as follow:
 <div align="center">
-  <img width="100%" alt="DEEPTAAD illustration" src="fig/rooc.png">
+  <img width="50%" alt="DEEPTAAD illustration" src="fig/rooc.png">
 </div>
 ## Data Acquisition
 - Dataset can be download from baidunetdisk(https://pan.baidu.com/s/1LGHuMxAAltROo4dxf39JCg?pwd=1234)
