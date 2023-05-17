@@ -2,7 +2,9 @@
 
 
 ## Flowchart of our DeepTAAD
-
+<div align="center">
+  <img width="100%" alt="DEEPTAAD illustration" src=".github/dino.gif">
+</div>
 
 ## Data Acquisition
 - Dataset can be download from baidunetdisk(https://pan.baidu.com/s/1LGHuMxAAltROo4dxf39JCg?pwd=1234)
