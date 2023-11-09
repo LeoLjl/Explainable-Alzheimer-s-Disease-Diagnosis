@@ -15,10 +15,6 @@ The roc curve of our model are shown as follow:
   <img width="50%" alt="DEEPTAAD illustration" src="fig/rooc.png">
 </div>
 
-
-## Data Acquisition
-- The processed ADNI-1 dataset can be download from baidunetdisk(https://pan.baidu.com/s/1LGHuMxAAltROo4dxf39JCg?pwd=1234)
-
 ## Requirements
 - python 3.7
 - pytorch 1.6.0
@@ -30,11 +26,9 @@ The roc curve of our model are shown as follow:
 - medpy
 
 ## Training
-Run the training script on ADNI dataset. Distributed training is available for training the proposed DeepTAAD, where --nproc_per_node decides the numer of gpus and --master_port implys the port number.
+Run the training script on the ADNI dataset. Distributed training is available for training the proposed DeepTAAD, where --nproc_per_node decides the numer of gpus and --master_port implys the port number.
 you can use the following command to train the model with task assistance loss
-`CUDA_VISIBLE_DEVICES=1 python3 -m torch.distributed.launch --nproc_per_node=1 --master_port 20003 cam_train.py`
-you can use the following command to train the model with task assistance loss and auxliary loss weight method to balance the scale of tasks
-`CUDA_VISIBLE_DEVICES=1 python3 -m torch.distributed.launch --nproc_per_node=1 --master_port 20003 uncertainty_loss_train.py`
+`CUDA_VISIBLE_DEVICES=0 python3 -m torch.distributed.launch --nproc_per_node=1 --master_port 20003 train.py`
 
 ## Testing 
 If  you want to test the model which has been trained on the ADNI dataset, run the testing script as following.
